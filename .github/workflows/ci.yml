@@ -35,3 +35,9 @@ jobs:
         run: |
           cd Project-3
           zip -r project-3-build.zip app -x "app/.venv/*" "app/__pycache__/*" "app/.pytest_cache/*"
+      - name: Deploy application
+        run: |
+          mkdir -p deployment
+          unzip -q Project-3/project-3-build.zip -d deployment
+          echo "Application deployed successfully"
+          ls -la deployment/app
