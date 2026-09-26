@@ -31,3 +31,7 @@ jobs:
         run: |
           cd Project-3/app
           pytest -v
+      - name: Build deployment package
+        run: |
+          cd Project-3
+          zip -r project-3-build.zip app -x "app/.venv/*" "app/__pycache__/*" "app/.pytest_cache/*"
